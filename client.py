@@ -6,7 +6,7 @@ import json
 import os
 
 SERVER_IP = "0.tcp.sa.ngrok.io"
-SERVER_PORT = 13940
+SERVER_PORT = 10173
 
 def get_ponto_montagem():
     if os.name == "nt":

@@ -8,6 +8,7 @@ HOST = "0.0.0.0"
 PORT = 5000
 CSV_FILE = "dados_monitoramento.csv"
 
+# Evitar duas threads escrevam ao mesmo tempo no CSV
 lock = threading.Lock()
 
 def salvar_csv(hostname, sistema, cpu, memoria, disco):
@@ -71,6 +72,7 @@ def criar_csv():
 def main():
     criar_csv()
 
+    # IPv4 e TCP
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
     server.listen()
